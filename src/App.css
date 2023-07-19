@@ -1,0 +1,6 @@
+.cubeLabel > div{
+    padding:5px 10px;
+    background-color:grey;
+    border-radius:20px;
+    user-select: none;
+}
