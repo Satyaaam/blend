@@ -3,6 +3,7 @@ import React, { useReducer, useRef } from 'react'
 import { extend, useFrame, useThree } from '@react-three/fiber'
 import { Float, Html, MeshReflectorMaterial, OrbitControls, PivotControls, TransformControls } from '@react-three/drei';
 import { CubeReflectionMapping } from 'three';
+import { Text } from '@react-three/drei';
 import '../App.css'
 
 // extend({OrbitControls})
@@ -28,6 +29,12 @@ const DrieStudy = () => {
     <OrbitControls makeDefault/>
     <directionalLight/>
     <ambientLight intensity={1.5}/>
+
+
+    <Text
+        fontSize={1}
+        position-y={3}
+        color={"red"}>Hi, Welcome</Text>
 
     <PivotControls 
      anchor={[0,0,0]}
