@@ -6,8 +6,11 @@ import * as THREE from 'three'
 import DrieStudy from './components/DrieStudy'
 
 const App = () => {
+  const created = ({gl}) => {
+    gl.setClearColor("skyblue")
+  }
   return (
-    <Canvas camera={{position:[3,2,10]}}>
+    <Canvas camera={{position:[3,2,10]}} onCreated={created}>
       <DrieStudy/>
     </Canvas>
   )

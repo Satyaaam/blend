@@ -5,6 +5,7 @@ import { Float, Html, MeshReflectorMaterial, OrbitControls, PivotControls, Trans
 import { CubeReflectionMapping } from 'three';
 import { Text } from '@react-three/drei';
 import '../App.css'
+import { Perf } from 'r3f-perf';
 
 // extend({OrbitControls})
 
@@ -26,6 +27,7 @@ const DrieStudy = () => {
   return (
     <>
     {/* <orbitControls args={[camera, gl.domElement]}/> */}
+    <Perf position='top-left'/>
     <OrbitControls makeDefault/>
     <directionalLight/>
     <ambientLight intensity={1.5}/>
@@ -34,7 +36,8 @@ const DrieStudy = () => {
     <Text
         fontSize={1}
         position-y={3}
-        color={"red"}>Hi, Welcome</Text>
+        color={"red"}>Hi, Welcome
+        <meshNormalMaterial/></Text>
 
     <PivotControls 
      anchor={[0,0,0]}
@@ -42,7 +45,7 @@ const DrieStudy = () => {
      scale={3}>
         <mesh ref={cubeRef} position-x={-2} scale={2}>
             <boxGeometry />
-            <meshStandardMaterial color={'gray'}/>
+            <meshNormalMaterial color={'gray'}/>
             <Html position={[1,1,0]} center wrapperClass='cubeLabel'
              occlude={[cubeRef, sphereRef]}>cube</Html>
         </mesh>
@@ -72,7 +75,7 @@ const DrieStudy = () => {
                 blur={[1000, 1000]}
                 mixBlur={1}
                 mirror={0.5}
-                color={"yellow"}/>
+                color={"#ff0000"}/>
         </mesh>
     </PivotControls>
     </Float>
