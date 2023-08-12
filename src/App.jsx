@@ -4,14 +4,16 @@ import FirstProject from './components/FirstProject'
 import CustomObjects from './components/CustomObjects'
 import * as THREE from 'three'
 import DrieStudy from './components/DrieStudy'
+import Shadow from './components/Shadow'
 
 const App = () => {
   const created = ({gl}) => {
     gl.setClearColor("skyblue")
   }
   return (
-    <Canvas camera={{position:[3,2,10]}} onCreated={created}>
+    <Canvas shadows camera={{position:[3,2,10]}} onCreated={created}>
       <DrieStudy/>
+      {/* <Shadow/> */}
     </Canvas>
   )
 }
